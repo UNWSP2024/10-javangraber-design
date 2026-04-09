@@ -1,4 +1,4 @@
-# Programmer: Javan Graber 
+# Programmer: Javan Graber
 # Date: 4/9/2026
 # Program # 2: Car Class
 
@@ -22,10 +22,10 @@ class Car:
 # Create the main function that gets the user input and displays the
 # changing speeds through the several calls of the Car class
 def main():
-    year_model = input("Please enter your year model: ")
-    make = input("Please enter your make: ")
+    year_model = "2008"
+    make = "BMW"
 
-    print(f"We will now test your {year_model} {make} car by changing some speeds")
+    print(f"We will now test your {year_model} {make} car by changing some speeds.")
 
     # Call for the Car class
     car_call = Car(year_model, make)
