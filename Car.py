@@ -1,14 +1,45 @@
+# Programmer: Javan Graber
+# Date: 4/9/2026
 # Program # 2: Car Class
-# Write a class named Car that has the following data attributes:
 
-# __year_model (for the car's year model)
-# __make (for the make of the car)
-# __speed (for the car's current speed)
-# The Car class should have an __init__ method that accepts the car's year model and make as arguments.  These values should be assigned to the object's __year_model and __make data attributes.  It should also assign 0 to the __speed data attribute.
+# Define the class with the accelerate, brake, and get_speed methods
+class Car:
+    # Begin with an initializer method
+    def __init__(self, year_model, make):
+        self.__year_model = year_model
+        self.__make = make
+        self.__speed = 0
+    # Create the accelerate method
+    def accelerate(self, __speed):
+        self.__speed = int(self.__speed + 5)
+    # Create the brake method
+    def brake(self, __speed):
+        self.__speed = int(self.__speed - 5)
+    # Create the get_speed method
+    def get_speed(self):
+        return int(self.__speed)
 
-# The class should also have the following methods:
+# Create the main function that gets the user input and displays the
+# changing speeds through the several calls of the Car class
+def main():
+    year_model = "2008"
+    make = "BMW"
 
-# The accelerate method should add 5 to the speed data attribute each time it it called.
-# The brake method should subtract 5 from the speed data attribute each time it is called.
-# The get_speed method should return the current speed.
-# Next, design a program that creates a Car object then calls the accelerate method five times.  After each call to the accelerate method, get the current speed of the car and display it.  The call the brake method.  After each call to the brake method, get the current speed of the car and display it.
+    print(f"We will now test your {year_model} {make} car by changing some speeds.")
+
+    # Call for the Car class
+    car_call = Car(year_model, make)
+    # Accelerate five times and display the speeds
+    for count in range (5):
+        car_call.accelerate(count)
+        print(f"The current speed is {car_call.get_speed()}")
+
+    print("We will now start slowing down.")
+
+    # Brake five times and display the speeds
+    for count in range (5):
+        car_call.brake(count)
+        print(f"The current speed is {car_call.get_speed()}")
+
+if __name__ == "__main__":
+    main()
